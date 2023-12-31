@@ -51,6 +51,8 @@ COPY --from=build-war /src/target/tilstory-0.0.1.war $JBOSS_HOME/standalone/depl
 COPY docker/standalone.xml $JBOSS_HOME/standalone/configuration/standalone.xml
 COPY docker/application.keystore $JBOSS_HOME/standalone/configuration/application.keystore
 
+RUN chmod +x /bin/entrypoint.sh
+
 USER jboss
 WORKDIR /opt/jboss
 EXPOSE 8080
