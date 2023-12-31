@@ -1,0 +1,9 @@
+<taglib version="3.0.1">
+    <tlib-version>1.0</tlib-version>
+    <short-name>stringescaper</short-name>
+    <function>
+        <name>unescapeHtml4</name>
+        <function-class>org.apache.commons.text.StringEscapeUtils</function-class>
+        <function-signature>java.lang.String unescapeHtml4(java.lang.String)</function-signature>
+    </function>
+</taglib>

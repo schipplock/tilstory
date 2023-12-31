@@ -1,0 +1,10 @@
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>3.1</jsp-version>
+    <short-name>postrenderer</short-name>
+    <tag>
+        <name>render</name>
+        <tag-class>de.schipplock.web.tilstory.PostRenderer</tag-class>
+        <body-content>JSP</body-content>
+    </tag>
+</taglib>

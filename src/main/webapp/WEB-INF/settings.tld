@@ -1,0 +1,47 @@
+<taglib xmlns="https://jakarta.ee/xml/ns/jakartaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-jsptaglibrary_3_1.xsd"
+        version="3.1">
+    <tlib-version>1.0</tlib-version>
+    <short-name>settings</short-name>
+    <function>
+        <name>baseurl</name>
+        <function-class>de.schipplock.web.tilstory.business.settings.control.SettingsManager</function-class>
+        <function-signature>java.lang.String baseUrl()</function-signature>
+    </function>
+    <function>
+        <name>name</name>
+        <function-class>de.schipplock.web.tilstory.business.settings.control.SettingsManager</function-class>
+        <function-signature>java.lang.String name()</function-signature>
+    </function>
+    <function>
+        <name>author</name>
+        <function-class>de.schipplock.web.tilstory.business.settings.control.SettingsManager</function-class>
+        <function-signature>java.lang.String author()</function-signature>
+    </function>
+    <function>
+        <name>phone</name>
+        <function-class>de.schipplock.web.tilstory.business.settings.control.SettingsManager</function-class>
+        <function-signature>java.lang.String phone()</function-signature>
+    </function>
+    <function>
+        <name>reversedEmail</name>
+        <function-class>de.schipplock.web.tilstory.business.settings.control.SettingsManager</function-class>
+        <function-signature>java.lang.String reversedEmail()</function-signature>
+    </function>
+    <function>
+        <name>email</name>
+        <function-class>de.schipplock.web.tilstory.business.settings.control.SettingsManager</function-class>
+        <function-signature>java.lang.String email()</function-signature>
+    </function>
+    <function>
+        <name>imprint</name>
+        <function-class>de.schipplock.web.tilstory.business.settings.control.SettingsManager</function-class>
+        <function-signature>java.lang.String imprint()</function-signature>
+    </function>
+    <function>
+        <name>privacyPolicy</name>
+        <function-class>de.schipplock.web.tilstory.business.settings.control.SettingsManager</function-class>
+        <function-signature>java.lang.String privacyPolicy()</function-signature>
+    </function>
+</taglib>

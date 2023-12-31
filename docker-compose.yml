@@ -1,0 +1,98 @@
+networks:
+  local-net:
+    name: local-net
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.10.1.0/24
+
+secrets:
+  keystore_password:
+    file: ./secrets/pw_keystore
+  postgres_password:
+    file: ./secrets/pw_postgres
+
+volumes:
+  tilstory-db-data:
+    name: tilstory-db-data
+  tilstory-app-uploads:
+    name: tilstory-app-uploads
+
+services:
+
+  flywaydb:
+    image: ghcr.io/schipplock/flywaydbpostgres:v9.20.0
+    container_name: flywaydb
+    networks:
+      local-net:
+        aliases:
+          - flywaydb
+    secrets:
+      - postgres_password
+    environment:
+      FLYWAY_POSTGRES_HOST: tilstory-db
+      FLYWAY_POSTGRES_PORT: 5432
+      FLYWAY_POSTGRES_USER: tilstory
+      FLYWAY_POSTGRES_DB: tilstory
+      FLYWAY_POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      FLYWAY_CONNECT_RETRIES: 5
+      FLYWAY_SCHEMAS: "public"
+      FLYWAY_TABLE: "schema_history"
+      FLYWAY_LOCATIONS: "filesystem:/migrations"
+      FLYWAY_ENCODING: "UTF-8"
+    volumes:
+      - ./sql-migrations:/migrations:ro
+
+  tilstory-db:
+    image: ghcr.io/schipplock/postgres-docker-image:v16.1.0
+    container_name: tilstory-db
+    networks:
+      local-net:
+        aliases:
+          - tilstory-db
+    secrets:
+      - postgres_password
+    environment:
+      POSTGRES_USER: tilstory
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      POSTGRES_DB: tilstory
+    volumes:
+      - tilstory-db-data:/var/lib/postgresql/data
+    restart: always
+    depends_on:
+      - flywaydb
+
+  tilstory-app:
+    image: local/tilstory-wildfly:30.0.1
+    container_name: tilstory-app
+    networks:
+      local-net:
+        aliases:
+          - tilstory-app
+    ports:
+      - "80:8080"
+      - "443:8443"
+      - "8001:8000" # remote debug
+      - "9001:9000" # remote jmx port
+      - "9100:9100" # remote rmi port
+    secrets:
+      - keystore_password
+      - postgres_password
+    environment:
+      POSTGRES_HOST: tilstory-db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: tilstory
+      POSTGRES_DB: tilstory
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      KEYSTORE_PASSWORD_FILE: /run/secrets/keystore_password
+      REMOTE_DEBUG_ENABLED: true
+      WILDFLY_NODE_ID: not-a-fish
+      Xms: 128m
+      Xmx: 1024m
+      MetaspaceSize: 96m
+      MaxMetaspaceSize: 256m
+    volumes:
+      - tilstory-app-uploads:/opt/jboss/wildfly/uploads
+    restart: always
+    depends_on:
+      - tilstory-db
