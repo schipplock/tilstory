@@ -54,41 +54,6 @@ public class PostManager {
         em.remove(em.merge(post));
     }
 
-    public void swapPosition(Post post1, Post post2) {
-        Long position1 = post1.getId();
-        Long position2 = post2.getId();
-
-        post1 = getPostById(post1.getId());
-        post2 = getPostById(post2.getId());
-        post1.setId(position2);
-        post2.setId(position1);
-
-        em.merge(post1);
-        em.merge(post2);
-    }
-
-    public Post getNextPost(Post post) {
-        try {
-            TypedQuery<Post> query = em.createQuery("SELECT NEW Post(id, subject, body, draft) FROM Post WHERE id > :position ORDER BY id", Post.class);
-            query.setParameter("position", post.getId());
-            query.setMaxResults(1);
-            return query.getSingleResult();
-        } catch (NoResultException ex) {
-            return null;
-        }
-    }
-
-    public Post getPreviousPost(Post post) {
-        try {
-            TypedQuery<Post> query = em.createQuery("SELECT NEW Post(id, subject, body, draft) FROM Post WHERE id < :position ORDER BY id DESC", Post.class);
-            query.setParameter("position", post.getId());
-            query.setMaxResults(1);
-            return query.getSingleResult();
-        } catch (NoResultException ex) {
-            return null;
-        }
-    }
-
     public Post getPostById(Long postId) {
         TypedQuery<Post> query = em.createQuery("SELECT p FROM Post p WHERE id = :id", Post.class);
         return query.setParameter("id", postId).getSingleResult();

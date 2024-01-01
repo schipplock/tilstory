@@ -62,14 +62,14 @@
                         </label>
                     </td>
                     <td>
-                        <a href="/_files/${id}/${file.filename}" target="_blank">${file.filename}</a>
+                        <a href="${pageContext.request.contextPath}/_files/${guid}/${file.filename}" target="_blank">${file.filename}</a>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
                         <code>
                         <c:if test="${fn:endsWith(file.filename, '.jpg') or fn:endsWith(file.filename, '.jpeg') or fn:endsWith(file.filename, '.png')}">
-                            !</c:if>[${file.filename}](&lt;/_files/${id}/${file.filename}&gt;)</code>
+                            !</c:if>[${file.filename}](&lt;${pageContext.request.contextPath}/_files/${guid}/${file.filename}&gt;)</code>
                     </td>
                 </tr>
             </c:forEach>

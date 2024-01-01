@@ -50,6 +50,8 @@ services:
       local-net:
         aliases:
           - tilstory-db
+    ports:
+      - "5432:5432"
     secrets:
       - postgres_password
     environment:
@@ -63,7 +65,7 @@ services:
       - flywaydb
 
   tilstory-app:
-    image: ghcr.io/schipplock/tilstory:v0.0.1
+    image: ghcr.io/schipplock/tilstory:v0.0.2
     container_name: tilstory-app
     networks:
       local-net:
@@ -73,8 +75,6 @@ services:
       - "80:8080"
       - "443:8443"
       - "8001:8000" # remote debug
-      - "9001:9000" # remote jmx port
-      - "9100:9100" # remote rmi port
     secrets:
       - keystore_password
       - postgres_password

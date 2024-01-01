@@ -1,3 +1,4 @@
 <jboss-web>
     <security-domain>tilstory</security-domain>
+    <default-encoding>UTF-8</default-encoding>
 </jboss-web>

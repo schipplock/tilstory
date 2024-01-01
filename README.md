@@ -1,10 +1,15 @@
+# TILStory
+
+Meine Blogsoftware. TIL = Today I learned.
+
+## Screenshots
+
+![](</screenshots/screenshot1_low.jpg>)
+![](</screenshots/screenshot5_low.jpg>)
+![](</screenshots/screenshot6_low.jpg>)
 
 ## Das Image bauen
 
 ```bash
-docker build --no-cache --network=host --force-rm -t local/tilstory-app:latest .
-```
-
-```bash
-docker build --network=host --force-rm -t local/tilstory-wildfly:30.0.1 .
+docker build --network=host --force-rm -t ghcr.io/schipplock/tilstory:v0.0.2 .
 ```
