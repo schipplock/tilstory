@@ -20,7 +20,7 @@
 </c:if>
 
 <c:if test="${post.getRowCount() eq 0}">
-    <c:redirect url="/no-post-for-you/" />
+    <c:redirect url="${settings:baseurl()}/no-post-for-you/" />
 </c:if>
 
 <sql:query var="postTitles" dataSource="postgres">

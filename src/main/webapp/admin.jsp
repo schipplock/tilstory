@@ -10,7 +10,7 @@
 <%
     if (request.getParameter("logoff") != null) {
         session.invalidate();
-        response.sendRedirect("admin.jsp");
+        response.sendRedirect(request.getContextPath() + "/admin.jsp");
         return;
     }
 %>
