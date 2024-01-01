@@ -39,13 +39,6 @@ public class Post {
         this.draft = draft;
     }
 
-    public Post(Long id, String subject, String body, boolean draft) {
-        this.id = id;
-        this.subject = subject;
-        this.body = body;
-        this.draft = draft;
-    }
-
     public Long getId() {
         return id;
     }
@@ -100,11 +93,6 @@ public class Post {
 
     public void setUpdated(LocalDateTime updated) {
         this.updated = updated;
-    }
-
-    @PrePersist
-    public void initializeUUID() {
-        guid = UUID.randomUUID();
     }
 
     @Override

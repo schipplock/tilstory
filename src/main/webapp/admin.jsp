@@ -84,6 +84,10 @@
         <input type="submit" value="speichern" />
     </form>
 </section>
+
+<section class="container">
+    <h2>Vorschau</h2>
+</section>
     
 <c:if test="${not empty param.id}">
     <section class="post">

@@ -46,17 +46,14 @@ main {
 }
 
 header {
+    box-sizing:border-box;
     border: 1px solid #41c4a6;
     margin-bottom: 10px;
     background-color:#fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    width:50%;
-    margin-left: auto;
-    margin-right: auto;
+    width:100%;
     text-align:center;
-    -webkit-border-radius: 50px 50px 0 50px;
-    -moz-border-radius: 50px 50px 0 50px;
-    border-radius: 50px 50px 0 50px;
+    border-radius: 5px 5px 0 0;
 }
 
 header h1 {
@@ -76,14 +73,15 @@ header h2 {
 header h3 {
     color: #c1c8c2;
     font-size:0.6em;
-    padding:0;
-    margin: 0 0 1px 11px;
+    padding:3px 0 3px 0;
+    margin:0;
     border-top-width:1px;
     border-top-color: #d8fff6;
     border-top-style:solid;
 }
 
 section {
+    box-sizing:border-box;
     border: 1px solid #41c4a6;
     padding: 10px 10px 10px 10px;
     margin-bottom: 10px;
@@ -99,26 +97,22 @@ section h1 {
 }
 
 section.post {
+    box-sizing:border-box;
     padding:0;
     width:100%;
-    -webkit-border-top-right-radius: 50px;
-    -moz-border-radius-topright: 50px;
-    border-top-right-radius: 50px;
 }
 
 section.postcontentless {
-    width:60%;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
+    box-sizing:border-box;
+    width:100%;
 }
 
 section.postcontentless:nth-child(odd) {
-    margin-left: auto;
+    background-color:#fff;
 }
 
 section.postcontentless:nth-child(even) {
-    margin-right: auto;
+    background-color: #fafafa;
 }
 
 section.post:nth-child(odd) {
@@ -126,7 +120,7 @@ section.post:nth-child(odd) {
 }
 
 section.post:nth-child(even) {
-    border: 1px solid #03fab9;
+    border: 1px solid #41c4a6;
 }
 
 section.post h1.subject {
@@ -150,9 +144,9 @@ section.post h2.error-description {
 }
 
 section.postcontentless h1.subject {
-    text-align:center;
+    text-align:left;
     margin:0;
-    font-size: 0.8em;
+    font-size: 1em;
     text-shadow: 0 0 0;
 }
 
@@ -225,8 +219,8 @@ section.post pre code {
     padding:10px;
     margin:0;
     background-color: #f7f7f7;
-    border-bottom: 1px solid #41c4a6;
-    border-top:0;
+    border-top: 1px solid #41c4a6;
+    border-bottom:0;
 }
 
 section.post ul, section.post.ol {
@@ -240,6 +234,7 @@ section.post ul, section.post.ol {
 }
 
 footer {
+    box-sizing:border-box;
     font-size:0.8em;
     background-color: #fff;
     border-width: 1px;
@@ -248,13 +243,8 @@ footer {
     padding: 10px 10px 10px;
     margin-bottom: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    width:50%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align:center;
-    -webkit-border-radius: 50px 0 50px 50px;
-    -moz-border-radius: 50px 0 50px 50px;
-    border-radius: 50px 0 50px 50px;
+    width:100%;
+    border-radius: 0 0 5px 5px;
 }
 
 .email {

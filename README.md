@@ -4,11 +4,11 @@ Meine Blogsoftware. TIL = Today I learned.
 
 ## Screenshots
 
-![](</screenshots/screenshot1_low.jpg>)
-![](</screenshots/screenshot5_low.jpg>)
+![](</screenshots/screenshot1_small.png>)
+![](</screenshots/screenshot2_small.png>)
 
 ## Das Image bauen
 
 ```bash
-docker build --network=host --force-rm -t ghcr.io/schipplock/tilstory:v0.0.2 .
+docker build --network=host --force-rm -t ghcr.io/schipplock/tilstory:v0.0.5 .
 ```
