@@ -6,7 +6,6 @@ Meine Blogsoftware. TIL = Today I learned.
 
 ![](</screenshots/screenshot1_low.jpg>)
 ![](</screenshots/screenshot5_low.jpg>)
-![](</screenshots/screenshot6_low.jpg>)
 
 ## Das Image bauen
 
