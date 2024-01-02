@@ -84,12 +84,11 @@
         <input type="submit" value="speichern" />
     </form>
 </section>
-
-<section class="container">
-    <h2>Vorschau</h2>
-</section>
     
 <c:if test="${not empty param.id}">
+    <section class="container">
+        <h2>Vorschau</h2>
+    </section>
     <section class="post">
         <h1 class="subject"><a href="${pageContext.request.contextPath}/?postId=${guid}#post${guid}" target="_blank">#${id}:</a>&nbsp;${subject}</h1>
         <h2 class="author">ein Beitrag von ${settings:author()}</h2>
