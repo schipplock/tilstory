@@ -47,7 +47,7 @@ FROM base
 
 COPY docker/entrypoint.sh /bin/entrypoint.sh
 COPY docker/postgresql-42.7.1.jar $JBOSS_HOME/standalone/deployments/postgresql-driver.jar
-COPY --from=build-war /src/target/tilstory-0.0.6.war $JBOSS_HOME/standalone/deployments/tilstory.war
+COPY --from=build-war /src/target/tilstory-0.0.7.war $JBOSS_HOME/standalone/deployments/tilstory.war
 COPY docker/standalone.xml $JBOSS_HOME/standalone/configuration/standalone.xml
 COPY docker/application.keystore $JBOSS_HOME/standalone/configuration/application.keystore
 

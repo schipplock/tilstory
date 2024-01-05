@@ -25,6 +25,8 @@ public class Post {
 
     private boolean draft;
 
+    private LocalDateTime created;
+
     private LocalDateTime updated;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "post", orphanRemoval = true)
@@ -85,6 +87,14 @@ public class Post {
 
     public void setFileUploads(List<FileUpload> fileUploads) {
         this.fileUploads = fileUploads;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
     }
 
     public LocalDateTime getUpdated() {

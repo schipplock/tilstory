@@ -33,6 +33,11 @@ public class PostManager {
         Post post = new Post(uuid, subject, body, isDraft);
         post.setFileUploads(handleFileUploads(post, fileParts));
         post.setFileUploads(deleteSelectedFilesForPost(post, fileNamesForDeletion));
+
+        if (!isDraft) {
+            post.setCreated(LocalDateTime.now());
+        }
+
         return em.merge(post);
     }
 
@@ -41,9 +46,16 @@ public class PostManager {
         post.setSubject(subject);
         post.setBody(body);
         post.setDraft(isDraft);
-        post.setUpdated(LocalDateTime.now());
         post.setFileUploads(handleFileUploads(post, fileParts));
         post.setFileUploads(deleteSelectedFilesForPost(post, fileNamesForDeletion));
+
+        if (!isDraft) {
+            post.setUpdated(LocalDateTime.now());
+            if (post.getCreated() == null) {
+                post.setCreated(LocalDateTime.now());
+                post.setUpdated(null);
+            }
+        }
 
         return em.merge(post);
     }

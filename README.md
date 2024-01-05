@@ -10,5 +10,5 @@ Meine Blogsoftware. TIL = Today I learned.
 ## Das Image bauen
 
 ```bash
-docker build --network=host --force-rm -t ghcr.io/schipplock/tilstory:v0.0.6 .
+docker build --network=host --force-rm -t ghcr.io/schipplock/tilstory:v0.0.7 .
 ```

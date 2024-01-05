@@ -65,7 +65,7 @@ services:
       - flywaydb
 
   tilstory-app:
-    image: ghcr.io/schipplock/tilstory:v0.0.6
+    image: ghcr.io/schipplock/tilstory:v0.0.7
     container_name: tilstory-app
     networks:
       local-net:
