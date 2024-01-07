@@ -144,3 +144,21 @@ section.container h2 {
     color: #ffffff;
     text-align: center;
 }
+
+.post-list {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 0;
+}
+
+.delete-button {
+    font-size: 1em;
+    color: #fff;
+    font-weight: bold;
+    width: 100%;
+    border-color: red;
+    background-color: red;
+    border-top-style: solid;
+}

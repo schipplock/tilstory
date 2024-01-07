@@ -104,41 +104,19 @@
 </c:if>
 
 <c:if test="${posts.getRowCount() > 0}">
-<section class="container">
-    <h2>Beiträge</h2>
-</section>
-
-<table style="width:100%" class="styled-table">
-    <tbody>
     <c:forEach var="post" items="${posts.rows}">
-        <tr>
-            <td style="text-align:center">
+        <section class="post postcontentless post-list" id="post${post.rows[0].guid}">
+            <h1 class="subject">
                 <c:if test="${not post.draft}"><b style="cursor:default" title="veröffentlicht, für alle sichtbar">🟢</b></c:if>
                 <c:if test="${post.draft}"><b style="cursor:default" title="noch nicht veröffentlicht, für niemanden sichtbar">🔴</b></c:if>
-            </td>
-            <td style="width:75%">${post.subject}</td>
-            <td style="width:15%">
-                <table>
-                    <tr>
-                        <td>
-                            <form method="get" action="">
-                                <input type="hidden" name="id" value="${post.id}" />
-                                <button type="submit" title="bearbeiten" style="width:25px">✎</button>
-                            </form>
-                        </td>
-                        <td>
-                            <form method="post" action="${pageContext.request.contextPath}/post" enctype="multipart/form-data" onsubmit="return confirm('Den Beitrag unwiderruflich löschen?')">
-                                <input type="hidden" name="_method" value="DELETE" />
-                                <input type="hidden" name="id" value="${post.id}" />
-                                <button type="submit" id="delete" title="l&ouml;schen" style="width:25px">␡</button>
-                            </form>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
+                <a href="${pageContext.request.contextPath}/admin.jsp?id=${post.id}">#${post.id}:&nbsp;${post.subject}</a>
+            </h1>
+            <form method="post" action="${pageContext.request.contextPath}/post" enctype="multipart/form-data" onsubmit="return confirm('Den Beitrag unwiderruflich löschen?')">
+                <input type="hidden" name="_method" value="DELETE" />
+                <input type="hidden" name="id" value="${post.id}" />
+                <button type="submit" class="delete-button" title="l&ouml;schen">löschen</button>
+            </form>
+        </section>
     </c:forEach>
-    </tbody>
-</table>
 </c:if>
 <jsp:include page="/WEB-INF/includes/admin/footer.jsp" />
