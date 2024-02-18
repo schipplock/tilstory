@@ -2,10 +2,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="settings" uri="/WEB-INF/settings.tld" %>
 <jsp:include page="/WEB-INF/includes/admin/header.jsp" />
-<section class="container">
-    <h2>Einstellungen ändern</h2>
-</section>
-<section id="new-post">
+<section>
     <c:if test="${not empty param.status and param.status eq 'success'}">
         <div id="status-success">Die Einstellungen wurden erfolgreich geändert.</div>
     </c:if>
@@ -30,4 +27,4 @@
         <input type="submit" value="Speichern" />
     </form>
 </section>
-<jsp:include page="/WEB-INF/includes/admin/footer.jsp" />
+<jsp:include page="/WEB-INF/includes/footer.jsp" />

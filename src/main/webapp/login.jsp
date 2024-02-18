@@ -9,4 +9,4 @@
     <input type="submit" value="Anmelden" />
 </form>
 </section>
-<jsp:include page="/WEB-INF/includes/admin/footer.jsp" />
+<jsp:include page="/WEB-INF/includes/footer.jsp" />

@@ -1,7 +1,26 @@
+:root {
+    --main-font: "Jost", "sans-serif";
+    --clr-main: #205cb6;
+    --clr-main-darker: #060922;
+    --clr-bright: #fff;
+    --clr-content: #11142e;
+    --clr-bold: #dbc607;
+}
+
+body {
+    font-family: var(--main-font);
+}
+
 .checkbox {
     display: inline-flex;
     cursor: pointer;
     position: relative;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2.8rem;
 }
 
 .checkbox > span {
@@ -10,8 +29,8 @@
 }
 
 .checkbox > input {
-    height: 15px;
-    width: 15px;
+    height: 45px;
+    width: 45px;
     -webkit-appearance: none;
     -moz-appearance: none;
     -o-appearance: none;
@@ -20,13 +39,11 @@
     border-radius: 2px;
     outline: none;
     transition-duration: 0.3s;
-    background-color: #ffffff;
     cursor: pointer;
 }
 
 .checkbox > input:checked {
     border: 1px solid #41B883;
-    background-color: #ffffff;
 }
 
 .checkbox > input:checked + span::before {
@@ -60,27 +77,24 @@ input[type=file] {
     margin-bottom: 10px;
 }
 
-nav b#menulabel {
-    color:#fff;
-    background-color:#608c8d;
-    padding:2px;
+input[type=submit] {
+    padding:10px;
+    font-size:1.6rem;
+    width: 100%;
 }
 
-nav#menu {
-    border: 1px solid #41c4a6;
-    padding:3px;
-    margin: 0 0 10px;
-    background-color: #fff;
-    font-size:0.8em;
-}
-
-section#new-post input[type=file] {
+section input[type=file] {
     padding:3px;
 }
 
-section#new-post input[type=text], section#new-post textarea, section#new-post input[type=file], section#new-post input[type=password] {
+section input[type=text],
+section textarea,
+section input[type=file],
+section input[type=password] {
     box-sizing: border-box;
     width:100%;
+    font-family: var(--main-font);
+    font-size: 1.6rem;
 }
 
 section.container {
@@ -103,8 +117,7 @@ section.container h2 {
     margin: 0 0 10px;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border: 1px solid #41c4a6;
-    background-color: #fff;
+    border: 1px solid #f8d01e;
 }
 
 .styled-table th,
@@ -113,7 +126,7 @@ section.container h2 {
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #3d3d3d;
 }
 
 .styled-table button {
@@ -147,10 +160,14 @@ section.container h2 {
 
 .post-list {
     display: grid;
-    grid-template-columns: 5fr 1fr;
+    grid-template-columns: 1fr 10fr;
     grid-template-rows: 1fr;
     grid-column-gap: 5px;
     grid-row-gap: 0;
+}
+.post-list form {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .delete-button {

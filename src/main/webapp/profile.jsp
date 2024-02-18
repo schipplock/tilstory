@@ -1,10 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="/WEB-INF/includes/admin/header.jsp" />
-<section class="container">
-    <h2>Profil ändern</h2>
-</section>
-<section id="new-post">
+<section>
     <c:if test="${not empty param.status and param.status eq 'success'}">
         <div id="status-success">Das Passwort wurde erfolgreich geändert.</div>
     </c:if>
@@ -24,4 +21,4 @@
         <input type="submit" value="Speichern" />
     </form>
 </section>
-<jsp:include page="/WEB-INF/includes/admin/footer.jsp" />
+<jsp:include page="/WEB-INF/includes/footer.jsp" />

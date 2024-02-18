@@ -7,7 +7,7 @@ RUN cd /src && mvn clean package
 FROM ubuntu:22.04 AS base
 SHELL ["/bin/bash", "-c"]
 
-ENV WILDFLY_VERSION=30.0.1.Final
+ENV WILDFLY_VERSION=31.0.0.Final
 ENV JBOSS_HOME=/opt/jboss/wildfly
 ENV LAUNCH_JBOSS_IN_BACKGROUND=true
 ENV LANG=de_DE.utf8
@@ -47,7 +47,7 @@ FROM base
 
 COPY docker/entrypoint.sh /bin/entrypoint.sh
 COPY docker/postgresql-42.7.1.jar $JBOSS_HOME/standalone/deployments/postgresql-driver.jar
-COPY --from=build-war /src/target/tilstory-0.0.8.war $JBOSS_HOME/standalone/deployments/tilstory.war
+COPY --from=build-war /src/target/tilstory-0.0.9.war $JBOSS_HOME/standalone/deployments/tilstory.war
 COPY docker/standalone.xml $JBOSS_HOME/standalone/configuration/standalone.xml
 COPY docker/application.keystore $JBOSS_HOME/standalone/configuration/application.keystore
 
