@@ -43,7 +43,7 @@
     <form method="post" action="${pageContext.request.contextPath}/post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="${id}" />
         Überschrift:<br />
-        <input type="text" name="subject" value="${subject}" required /><br />
+        <input type="text" name="subject" value="${stringescaper:escapeHtml4(subject)}" required /><br />
         Text:<br />
         <textarea name="body" rows="20" required>${body}</textarea><br />
         <hr />

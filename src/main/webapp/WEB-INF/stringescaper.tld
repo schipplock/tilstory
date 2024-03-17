@@ -1,9 +1,17 @@
-<taglib version="3.0.1">
+<taglib xmlns="https://jakarta.ee/xml/ns/jakartaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-jsptaglibrary_3_1.xsd"
+        version="3.1">
     <tlib-version>1.0</tlib-version>
     <short-name>stringescaper</short-name>
     <function>
         <name>unescapeHtml4</name>
         <function-class>org.apache.commons.text.StringEscapeUtils</function-class>
         <function-signature>java.lang.String unescapeHtml4(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>escapeHtml4</name>
+        <function-class>org.apache.commons.text.StringEscapeUtils</function-class>
+        <function-signature>java.lang.String escapeHtml4(java.lang.String)</function-signature>
     </function>
 </taglib>

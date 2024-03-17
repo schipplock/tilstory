@@ -1,5 +1,5 @@
 <!--
-Copyright 2023 Andreas Schipplock
+Copyright 2024 Andreas Schipplock
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ limitations under the License.
     <groupId>de.schipplock.web</groupId>
     <artifactId>tilstory</artifactId>
     <packaging>war</packaging>
-    <version>0.0.9</version>
+    <version>0.0.10</version>
     <name>TILstory</name>
     <description>Today I learned - blogging tool</description>
     <url>https://github.com/schipplock/tilstory</url>
@@ -80,6 +80,11 @@ limitations under the License.
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
             <version>1.16.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.11.0</version>
         </dependency>
     </dependencies>
 </project>
