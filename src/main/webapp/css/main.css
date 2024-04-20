@@ -61,6 +61,7 @@ img {
 a:link, a:visited, a:link h1, a:visited h1 {
     color: #e6c614;
     text-decoration: none;
+    overflow-wrap: anywhere;
 }
 
 b {
@@ -155,14 +156,13 @@ header h1 {
     text-shadow: 1px 1px 2px #c0c0c0;
     text-align: right;
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 header h2 {
     color: #ffffff;
     padding:0;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     margin: 0;
-    padding: 0;
     margin-top: auto;
     margin-bottom: auto;
     line-height: 0.9;
@@ -187,9 +187,7 @@ section.post {
 section.post h2 {
     margin:0;
     padding:0;
-    padding:20px;
     font-weight: 700;
-    font-size:3rem;
 }
 @media all and (max-width: 1000px) {
     section.post h2 {
@@ -199,8 +197,9 @@ section.post h2 {
 section.post p {
     margin:0;
     padding:20px;
-    font-size:1.6rem;
+    font-size:1.2rem;
     background-color: var(--clr-content);
+    overflow-wrap: anywhere;
 }
 @media all and (max-width: 1000px) {
     section.post p {
@@ -214,7 +213,7 @@ section.post p.created {
     grid-area: "posttitles";
 }
 .posttitles h2.subject {
-    font-size: 1.6rem;
+    font-size: 1rem;
 }
 .postcontent {
     grid-area: "postcontent";
@@ -229,7 +228,8 @@ section.post p.created {
 }
 .postcontent h2.subject {
     background-color: var(--clr-main);
-    font-size: 2.5rem;
+    font-size: 1.4rem;
+    padding-left: 18px;
 }
 
 footer {

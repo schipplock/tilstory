@@ -18,7 +18,7 @@ limitations under the License.
     <groupId>de.schipplock.web</groupId>
     <artifactId>tilstory</artifactId>
     <packaging>war</packaging>
-    <version>0.0.10</version>
+    <version>0.0.11</version>
     <name>TILstory</name>
     <description>Today I learned - blogging tool</description>
     <url>https://github.com/schipplock/tilstory</url>
